@@ -2,6 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+		<div @click="goTo('/')">a</div> 
+		<div @click="goTo('/pageb')">b</div> 
+		<router-view/>
   </div>
 </template>
 
@@ -12,7 +15,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+	methods:{
+		goTo(path) {
+        this.$router.replace(path)
+    }
+	}
 }
 </script>
 
